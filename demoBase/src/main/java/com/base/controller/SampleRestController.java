@@ -19,7 +19,7 @@ import com.base.service.UserService;
 
 @RestController
 @RequestMapping(value="/user/")
-public class HelloWorldRestController {
+public class SampleRestController {
 
 	@Autowired
 	UserService userService;  //Service which will do all data retrieval/manipulation work
