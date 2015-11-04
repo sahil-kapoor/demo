@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.base.dao.city.CityDao;
+import com.base.dao.city.CityDaoImpl;
 import com.base.model.User;
 import com.base.service.UserService;
 
@@ -24,16 +26,19 @@ public class SampleRestController {
 	@Autowired
 	UserService userService;  //Service which will do all data retrieval/manipulation work
 
-	
+	@Autowired
+	CityDao cityDaoImpl;
 	//-------------------Retrieve All Users--------------------------------------------------------
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<List<User>> listAllUsers() {
+	public ResponseEntity<String> listAllUsers() {
 		List<User> users = userService.findAllUsers();
 		if(users.isEmpty()){
-			return new ResponseEntity<List<User>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+			return new ResponseEntity<String>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
 		}
-		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+		 
+		cityDaoImpl.getNameById("1");
+		return new ResponseEntity<String>(cityDaoImpl.getNameById("1"), HttpStatus.OK);
 	}
 
 
