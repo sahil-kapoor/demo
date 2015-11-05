@@ -1,7 +1,5 @@
 package com.base.dao.city;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.base.dao.AbstractDao;
 
 public class CityDaoImpl implements CityDao {

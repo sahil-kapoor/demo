@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.base.dao.city.CityDao;
-import com.base.dao.city.CityDaoImpl;
 import com.base.model.User;
 import com.base.service.UserService;
 
